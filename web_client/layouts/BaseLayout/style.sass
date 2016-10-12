@@ -1,0 +1,30 @@
+
+
+.app__header_logo
+  color: red
+
+
+html, body, #app
+  height: 100%
+
+
+
+.app
+
+  &__content
+    position: relative
+    perspective: 600px
+    transform-origin: center
+
+    &_page
+      &-leave, &-enter
+        transition: all  ease
+      &-leave
+        transform: translateX(0px) rotateY(0deg)
+        &-active
+          transform: translateX(-600px) rotateY(-45deg)
+      &-enter
+        transform: translateX(600px) rotateY(45deg)
+        position: absolute
+        &-active
+          transform: translateX(0px) rotateY(0deg)
