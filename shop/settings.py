@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'api_v0',
     'rest_framework',
     'main',
+    'myshop',
 ]
 
 MIDDLEWARE = [
