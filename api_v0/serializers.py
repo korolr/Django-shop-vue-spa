@@ -38,6 +38,7 @@ class ShopDetal(serializers.ModelSerializer):
     class Meta:
         model = Category
         fields = [
+            'id',
             'name',
             'test',
             'text',
