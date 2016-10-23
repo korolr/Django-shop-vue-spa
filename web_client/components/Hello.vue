@@ -1,6 +1,11 @@
 <template lang="html">
     <div>
-        <h1> {{ items }} </h1>
+        <div v-for="item in items">
+            <span> {{ item.id }} </span>
+            <span> {{ item.created_at }} </span>
+            <h3 href="{{ item.url }}"> {{ item.title }} </h3>
+            <p> {{ item.announce }} </p>
+        </div>
     </div>
 </template>
 
@@ -8,37 +13,30 @@
     module.exports = {
         data: function() {
             return {
-                items: {}
+                items: [],
+                endpoint: '/api/v0/articles/'
             }
         },
-        ready: function () {
-                    var self = this;
-            $.ajax({
-                            url: '@Url.Action("GetItems", "Settings")',
-                            method: 'GET',
-                success: function (data) {
-                                    self.Items = data;
-                },
-                error: function (error) {
-                                    alert(JSON.stringify(error));
-                }
-            });
+        methods: {
+        getAllPosts: function(){
+            this.$http.get(this.endpoint).then(function(response){
+            this.items = response.data
+                       }, function(error){
+                //error
+            })
         }
+    },
+    created: function() {
+        this.getAllPosts();
     }
+
+   }
 
 </script>
 
 <style lang="sass">
-    h1
-        display: block
-        position: absolute
-        width: 100%
-        height: 100px
-        top: 50%
-        margin: -50px 0 0 0
-        font-size: 54px
-        line-height: 64px
-        font-weight: 300
+    div
+        font-size: 14px
         color: #525255
         text-align: center
 </style>

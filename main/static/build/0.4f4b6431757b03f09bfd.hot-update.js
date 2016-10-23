@@ -1,0 +1,1 @@
+webpackHotUpdate(0,[,function(n,t,i){t=n.exports=i(2)(),t.push([n.i,"\ndiv {\n  display: block;\n  width: 100%;\n  height: 100px;\n  top: 50%;\n  margin: -50px 0 0 0;\n  font-size: 14px;\n  color: #525255;\n  text-align: center;\n}\n",""])}]);

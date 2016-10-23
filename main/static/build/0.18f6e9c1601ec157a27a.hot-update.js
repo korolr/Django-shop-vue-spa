@@ -1,0 +1,1 @@
+webpackHotUpdate(0,{11:function(module,exports){module.exports={render:function(){with(this)return _h("div",[_h("h1",[" "+_s(items)+" "])])},staticRenderFns:[]}}});
